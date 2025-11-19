@@ -3,15 +3,13 @@ package com.example.flows.repository
 
 import com.example.flows.data.Todo
 import com.example.flows.data.TodoDao
-import kotlinx.coroutines.flow.Flow
 
 class TodoRepository(
     private val dao: TodoDao
 ) {
-    val todos: Flow<List<Todo>> = dao.getTodos()
-
-    suspend fun addTodo(title: String) {
-        dao.insert(Todo(title = title))
+    fun getTodos(category: String) =  dao.getTodos(category)
+    suspend fun addTodo(title: String, category: String) {
+        dao.insert(Todo(title = title, category = category))
     }
 
     suspend fun toggle(todo: Todo) {

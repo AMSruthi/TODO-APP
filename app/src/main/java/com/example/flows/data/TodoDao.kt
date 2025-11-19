@@ -11,8 +11,9 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface TodoDao {
 
-    @Query("SELECT * FROM todos ORDER BY id DESC")
-    fun getTodos(): Flow<List<Todo>>
+
+    @Query("SELECT * FROM todos WHERE category = :category ORDER BY id DESC")
+    fun getTodos(category: String): Flow<List<Todo>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(todo: Todo)

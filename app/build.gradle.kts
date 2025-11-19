@@ -75,4 +75,7 @@ dependencies {
     ksp(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
     ksp(libs.kotlinx.metadata.jvm)
+
+    //JETPACK NAVIGATION
+    implementation(libs.jetpack.compose.navigation)
 }

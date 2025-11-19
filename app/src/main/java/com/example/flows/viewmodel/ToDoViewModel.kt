@@ -16,16 +16,15 @@ class TodoViewModel @Inject constructor(
     private val repo: TodoRepository
 ) : ViewModel() {
 
-    val todos: StateFlow<List<Todo>> =
-        repo.todos.stateIn(
-            viewModelScope,
-            SharingStarted.WhileSubscribed(5000),
-            emptyList()
+    fun getTodos(category: String): StateFlow<List<Todo>> {
+        return repo.getTodos(category = category).stateIn(
+            viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList()
         )
+    }
 
-    fun add(title: String) {
+    fun add(title: String, category: String) {
         viewModelScope.launch {
-            repo.addTodo(title)
+            repo.addTodo(title, category)
         }
     }
 

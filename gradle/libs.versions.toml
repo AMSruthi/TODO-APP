@@ -42,7 +42,10 @@ androidx-room-compiler = { group = "androidx.room", name = "room-compiler", vers
 # HILT (correct)
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltVersion" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hiltVersion" }
-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version = "1.2.0" }
+hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version = "1.3.0" }
+
+#JETPACK COMPOSE NAVIGATION
+jetpack-compose-navigation = {group = "androidx.navigation", name = "navigation-compose", version = "2.9.6" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
